@@ -12,6 +12,7 @@ schema/*.db
 *.sqlite
 *.sqlite3
 *.db
+*.swp
 src/*
 .hgignore
 .hg/*
