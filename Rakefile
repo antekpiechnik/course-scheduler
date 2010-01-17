@@ -10,9 +10,9 @@ include FileUtils
 # any plugins and therefore plugin rake tasks.
 init_env = ENV['MERB_ENV'] || 'rake'
 Merb.load_dependencies(:environment => init_env)
-     
+
 # Get Merb plugins and dependencies
-Merb::Plugins.rakefiles.each { |r| require r } 
+Merb::Plugins.rakefiles.each { |r| require r }
 
 # Load any app level custom rakefile extensions from lib/tasks
 tasks_path = File.join(File.dirname(__FILE__), "lib", "tasks")
@@ -27,7 +27,7 @@ end
 require 'spec/rake/spectask'
 require 'merb-core/test/tasks/spectasks'
 desc 'Default: run spec examples'
-task :default => 'spec'
+task :default => ['spec:model', 'cucumber']
 
 ##############################################################################
 # ADD YOUR CUSTOM TASKS IN /lib/tasks
