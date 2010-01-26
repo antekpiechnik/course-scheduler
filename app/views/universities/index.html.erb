@@ -1,1 +1,16 @@
-Wybierz opcję z menu po prawej.
+<table>
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Opcje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @universities.each do |university| %>
+      <tr>
+        <td><%= university.name %></td>
+        <td><%= link_to("Edytuj", url(:controller => "universities", :action => "edit", :id => university.id)) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

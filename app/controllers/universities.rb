@@ -1,5 +1,6 @@
 class Universities < Application
   def index
+    @universities = University.all
     render
   end
 
