@@ -196,22 +196,8 @@ input, textarea, select {
   color: #999999;
 }
 
-.post .meta .byline {
-  float: left;
-}
-
 .post .meta .links {
   float: right;
-}
-
-.post .meta .more {
-  padding: 0 20px 0 18px;
-  background: url(images/img06.gif) no-repeat left center;
-}
-
-.post .meta .comments {
-  padding-left: 22px;
-  background: url(images/img07.gif) no-repeat left center;
 }
 
 .post .meta b {
