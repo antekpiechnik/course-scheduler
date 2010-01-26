@@ -4,6 +4,8 @@ require 'rake/rdoctask'
 require 'merb-core'
 require 'merb-core/tasks/merb'
 
+require 'rake/testtask'
+
 include FileUtils
 
 # Load the basic runtime dependencies; this will include 
@@ -24,10 +26,12 @@ task :merb_env do
   Merb.start_environment(:environment => init_env, :adapter => 'runner')
 end
 
-require 'spec/rake/spectask'
-require 'merb-core/test/tasks/spectasks'
+Rake::TestTask.new(:test) do |t|
+  t.test_files = FileList["test/**/*_test.rb"]
+end
+
 desc 'Default: run spec examples'
-task :default => ['spec:model', 'cucumber']
+task :default => ['test', 'cucumber']
 
 ##############################################################################
 # ADD YOUR CUSTOM TASKS IN /lib/tasks
