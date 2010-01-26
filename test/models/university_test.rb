@@ -7,4 +7,13 @@ class UniversityTest < Test::Unit::TestCase
       university.name = ""
     end
   end
+
+  def test_name_unique
+    name = "unique"
+    University.make(:name => name)
+    university = University.make
+    assert_invalid(university, :name, "Name is already taken") do
+      university.name = name
+    end
+  end
 end
