@@ -3,7 +3,7 @@ module Merb
     def flash_message
       unless message.empty?
         message_type = message.keys.first
-        message_text = h(message[message_type])
+        message_text = message[message_type]
         partial("shared/flash", {:message_type => message_type, :message_text => message_text})
       end
     end
@@ -25,6 +25,11 @@ module Merb
       else
         partial "shared/submenu", :menu_items => submenu_items
       end
+    end
+
+    def error_messages(model)
+      errors = model.errors.values.flatten
+      partial "shared/error_messages", :errors => errors
     end
 
     protected

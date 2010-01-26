@@ -11,7 +11,7 @@ class Universities < Application
     redirect(url(:controller => "universities", :action => "index"),
              :message => {:notice => "Dodano uniwersytet"})
   rescue Sequel::ValidationFailed
-    self.message[:error] = "Nie dodano uniwersytetu"
+    self.message[:error] = error_messages(@university)
     render
   end
 

@@ -12,5 +12,5 @@
     And I follow "studia"
     And I follow "dodaj nowe"
     And I press "Dodaj"
-    Then I should see "Nie dodano uniwersytetu"
+    Then I should see "Wystąpiły błędy"
     And I should be on "new university" page
