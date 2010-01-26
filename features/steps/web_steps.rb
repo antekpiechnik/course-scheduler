@@ -1,3 +1,5 @@
+require 'uri'
+
 When /^I go to "([^\"]*)" page$/ do |page_name|
   visit(path_to(page_name))
 end
@@ -24,5 +26,5 @@ end
 
 Then /^I should be on "([^\"]*)" page$/ do |page_name|
   path = path_to(page_name)
-  webrat_session.current_url.should include(path)
+  assert_equal URI.parse(webrat_session.current_url).path, URI.parse(path).path
 end

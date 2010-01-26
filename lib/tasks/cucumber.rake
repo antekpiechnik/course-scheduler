@@ -14,6 +14,6 @@ Cucumber::Rake::Task.new(:"cucumber:wip") do |t|
   t.cucumber_opts = "--tags @wip --wip --format progress"
 end
 
-dependencies = ['merb_cucumber:test_env', 'sequel:db:migrate']
+dependencies = ['merb_cucumber:test_env', 'sequel:db:reset']
 task :cucumber => dependencies
 task :"cucumber:wip" => dependencies

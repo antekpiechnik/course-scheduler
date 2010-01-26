@@ -14,3 +14,13 @@
     And I press "Dodaj"
     Then I should see "Wystąpiły błędy"
     And I should be on "new university" page
+
+  Scenario: Removing university
+    Given one model University exists
+    And university name is "Michal"
+    When I go to "universities" page
+    Then I should see "Michal"
+    When I follow "Usuń"
+    And I press "Tak"
+    Then I should be on "universities" page
+    And I should not see "Michal"

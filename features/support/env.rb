@@ -11,6 +11,7 @@ require "merb-core"
 require 'spec/expectations'
 require "merb_cucumber/world/simple"
 require "merb_cucumber/helpers/datamapper"
+require "test/unit/assertions"
 
 # Uncomment if you want transactional fixtures
 # Merb::Test::World::Base.use_transactional_fixtures
@@ -20,4 +21,4 @@ require "merb_cucumber/helpers/datamapper"
 def Spec.run? ; true; end
 
 Merb.start_environment(:testing => true, :adapter => 'runner', :environment => ENV['MERB_ENV'] || 'test')
-  
+World(Test::Unit::Assertions)
