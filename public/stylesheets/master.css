@@ -267,6 +267,10 @@ input, textarea, select {
   height: 100px;
 }
 
+.box1 img {
+  border: 1px solid #ddd;
+}
+
 .box2 {
   color: #BABABA;
 }

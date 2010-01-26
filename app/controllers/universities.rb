@@ -10,6 +10,9 @@ class Universities < Application
     @university.save
     redirect(url(:controller => "universities", :action => "index"),
              :message => {:notice => "Dodano uniwersytet"})
+  rescue Sequel::ValidationFailed
+    self.message[:error] = "Nie dodano uniwersytetu"
+    render
   end
 
   def title

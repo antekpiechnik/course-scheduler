@@ -7,6 +7,8 @@ module NavigationHelpers
       url(:controller => "dashboard")
     when "universities"
       url(:controller => "universities")
+    when "new university"
+      url(:controller => "universities", :action => "add")
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"
