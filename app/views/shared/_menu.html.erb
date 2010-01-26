@@ -1,0 +1,5 @@
+<ul>
+  <% menu_items.each do |name, link, li_klass| %>
+    <li class="<%= li_klass %>"><%= link_to(name, link) %></li>
+  <% end %>
+</ul>

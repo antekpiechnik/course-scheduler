@@ -13,13 +13,7 @@
         <h2>by msq &amp; tph</h2>
       </div>
       <div id="menu">
-        <ul>
-          <li class="active"><a href="#">home</a></li>
-          <li><a href="#">konta</a></li>
-          <li><a href="#">studia</a></li>
-          <li><a href="#">raporty</a></li>
-          <li><a href="#">wyloguj</a></li>
-        </ul>
+        <%= self.menu() %>
       </div>
     </div>
     <!-- end header -->
@@ -29,7 +23,7 @@
       <div id="content">
         <%= flash_message %>
         <div class="post">
-          <h1 class="title">Course Scheduler</h1>
+          <h1 class="title"><%= display_title() %></h1>
           <div class="entry">
             <p><%= catch_content :for_layout %></p>
           </div>
@@ -40,7 +34,7 @@
       <div id="sidebar">
         <ul>
           <li>
-          <h2><b>home</b> menu</h2>
+          <h2><b>sub</b> menu</h2>
           <ul>
             <li><a href="#">Nec metus sed donec</a></li>
             <li><a href="#">Magna lacus bibendum mauris</a></li>
