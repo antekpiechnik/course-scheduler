@@ -1,12 +1,72 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
   <head>
-    <title>Fresh Merb App</title>
+    <title>System Planowania Zajęć</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" charset="utf-8" />
   </head>
   <body>
-    <%#= message[:notice] %>
-    <%= catch_content :for_layout %>
+    <!-- start header -->
+    <div id="header">
+      <div id="logo">
+        <h1><a href="#">Planowanie Zajęć<sup>v0.1</sup></a></h1>
+        <h2>msq + tph</h2>
+      </div>
+      <div id="menu">
+        <ul>
+          <li class="active"><a href="#">home</a></li>
+          <li><a href="#">konta</a></li>
+          <li><a href="#">studia</a></li>
+          <li><a href="#">raporty</a></li>
+          <li><a href="#">wyloguj</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- end header -->
+    <!-- start page -->
+    <div id="page">
+      <!-- start content -->
+      <div id="content">
+        <!--
+        flash messages
+        <div class="box1">
+          <p><img src="images/img04.jpg" alt="" width="74" height="79" class="left" /><strong>Volutpat at varius</strong> sed sollicitudin et, arcu. Vivamus viverra. Nullam turpis. Vestibulum eros. Cras lobortis <a href="#">eget nonummy</a>. Vestibulum vel purus. In eget odio in sapien adipiscing sed blandit. Quisque augue tortor, facilisis sit amet, aliquam.</p>
+        </div>
+        -->
+        <div class="post">
+          <h1 class="title">Generator rozkładów zajęć</h1>
+          <div class="entry">
+            <p><%= catch_content :for_layout %></p>
+          </div>
+          <div class="meta">
+            <p class="byline">Posted on July 21, 2007 by NodeThirtyThree</p>
+            <p class="links"><a href="#" class="more">Read full article</a> <b>|</b> <a href="#" class="comments">Comments (32)</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- end content -->
+      <!-- start sidebar -->
+      <div id="sidebar">
+        <ul>
+          <li>
+          <h2><b>home</b> menu</h2>
+          <ul>
+            <li><a href="#">Nec metus sed donec</a></li>
+            <li><a href="#">Magna lacus bibendum mauris</a></li>
+            <li><a href="#">Velit semper nisi molestie</a></li>
+            <li><a href="#">Eget tempor eget nonummy</a></li>
+          </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- end sidebar -->
+      <div style="clear: both;">&nbsp;</div>
+    </div>
+    <!-- end page -->
+    <!-- start footer -->
+    <div id="footer">
+      <p id="legal">(c) 2009-2010 AGH. Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> and <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+    </div>
+    <!-- end footer -->
   </body>
 </html>
