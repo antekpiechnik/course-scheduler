@@ -278,6 +278,7 @@ input, textarea, select {
 .box1 {
   padding: 20px;
   background: url(images/img05.gif) no-repeat;
+  height: 100px;
 }
 
 .box2 {

@@ -9,8 +9,8 @@
     <!-- start header -->
     <div id="header">
       <div id="logo">
-        <h1><a href="#">Planowanie Zajęć<sup>v0.1</sup></a></h1>
-        <h2>msq + tph</h2>
+        <h1><a href="#">Course Scheduler<sup>v0.1</sup></a></h1>
+        <h2>by msq &amp; tph</h2>
       </div>
       <div id="menu">
         <ul>
@@ -27,14 +27,9 @@
     <div id="page">
       <!-- start content -->
       <div id="content">
-        <!--
-        flash messages
-        <div class="box1">
-          <p><img src="images/img04.jpg" alt="" width="74" height="79" class="left" /><strong>Volutpat at varius</strong> sed sollicitudin et, arcu. Vivamus viverra. Nullam turpis. Vestibulum eros. Cras lobortis <a href="#">eget nonummy</a>. Vestibulum vel purus. In eget odio in sapien adipiscing sed blandit. Quisque augue tortor, facilisis sit amet, aliquam.</p>
-        </div>
-        -->
+        <%= flash_message %>
         <div class="post">
-          <h1 class="title">Generator rozkładów zajęć</h1>
+          <h1 class="title">Course Scheduler</h1>
           <div class="entry">
             <p><%= catch_content :for_layout %></p>
           </div>
