@@ -1,11 +1,9 @@
 class Exceptions < Application
-  # handle NotFound exceptions (404)
-  def not_found
-    render :format => :html
+  def exception
+    render request.exceptions.first.message
   end
 
-  # handle NotAcceptable exceptions (406)
-  def not_acceptable
-    render :format => :html
+  def title
+    "Błąd"
   end
 end
