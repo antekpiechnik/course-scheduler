@@ -19,6 +19,14 @@ module Merb
       partial "shared/menu", :menu_items => items
     end
 
+    def submenu
+      if submenu_items.empty?
+        "Brak submenu"
+      else
+        partial "shared/submenu", :menu_items => submenu_items
+      end
+    end
+
     protected
     def li_class(name)
       self.class.name.downcase == name ? "active" : ""

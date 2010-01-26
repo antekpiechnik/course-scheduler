@@ -10,4 +10,8 @@ class Application < Merb::Controller
   def title=(title)
     @_title = title
   end
+
+  def submenu_items
+    []
+  end
 end
