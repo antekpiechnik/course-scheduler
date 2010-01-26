@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <% columns.each do |field, column_name| %>
+        <th><%= column_name %></th>
+      <% end %>
+      <th>Opcje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% objects.each do |object| %>
+      <tr>
+        <% columns.each do |field, _| %>
+          <td><%= object.send(field) %></td>
+        <%  end %>
+        <td>
+          <%= link_to("Edytuj", url(:controller => controller_name, :action => "edit", :id => object.id)) %>
+          <%= link_to("Usuń", url(:controller => controller_name, :action => "delete", :id => object.id)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

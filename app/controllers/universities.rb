@@ -1,6 +1,7 @@
 class Universities < Application
   def index
     @universities = University.all
+    @universities = [University, "universities", [[:name, "Nazwa"]]]
     render
   end
 

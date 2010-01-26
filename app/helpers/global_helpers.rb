@@ -32,6 +32,11 @@ module Merb
       partial "shared/error_messages", :errors => errors
     end
 
+    def tabular(klass, controller, columns)
+      objects = klass.all
+      partial "shared/tabular", :objects => objects, :columns => columns, :controller_name => controller
+    end
+
     protected
     def li_class(name)
       self.class.name.downcase == name ? "active" : ""
