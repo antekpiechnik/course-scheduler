@@ -1,0 +1,5 @@
+<%= form_for @university, :action => url(:action => "add") do %>
+  <%= text_field :name, :label => "Nazwa" %>
+  <%= check_box :pensum, :label => "Pensum?" %>
+  <%= submit "Dodaj" %>
+<% end =%>
