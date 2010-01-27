@@ -32,12 +32,12 @@ module Merb
       partial "shared/error_messages", :errors => errors
     end
 
-    def tabular(klass, controller, columns)
+    def tabular(klass, ds, controller, columns)
       order = params[:order]
       fields = columns.map { |f, _| f }
-      objects = klass.tabular(params[:order], params[:page], fields)
+      objects = klass.tabular(ds, params[:order], params[:page], fields)
       headers = header_links(params[:order], controller, columns)
-      pagination = pagination(klass, controller)
+      pagination = pagination(klass, ds, controller)
       locals = {
         :objects => objects, :fields => fields,
         :headers => headers, :pagination => pagination,
@@ -65,17 +65,17 @@ module Merb
         end
         [order, name]
       end
-      columns.map! { |order, name| link_to(name, url(:controller => controller, :order => order)) }
+      columns.map! { |order, name| link_to(name, url(:controller => controller, :order => order, :id => params[:id])) }
       columns
     end
 
-    def pagination(klass, controller)
-      total = klass.count
+    def pagination(klass, ds, controller)
+      total = ds.unordered.count
       return "" if total == 0
       pages = (total - 1) / klass.per_page + 1
       links = []
       pages.times do |page|
-        links << link_to((page + 1).to_s, url(:controller => controller, :order => params[:order], :page => page))
+        links << link_to((page + 1).to_s, url(:controller => controller, :order => params[:order], :page => page, :id => params[:id]))
       end
       links.join(" | ")
     end

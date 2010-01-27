@@ -1,7 +1,6 @@
 class Universities < Application
   def index
-    @universities = University.all
-    @universities = [University, "universities", [[:name, "Nazwa"], [:pensum, "Pensum?"]]]
+    @universities = [University, University.dataset, "universities", [[:name, "Nazwa"], [:pensum, "Pensum?"]]]
     render
   end
 

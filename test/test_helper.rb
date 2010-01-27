@@ -23,4 +23,5 @@ class Test::Unit::TestCase
   include CustomAssertions
 end
 
-University.destroy
+Degree.delete
+University.delete

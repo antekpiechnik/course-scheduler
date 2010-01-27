@@ -7,6 +7,12 @@ Sham.name { Faker::Name.name }
 Sham.boolean(:unique => false) { [true, false].rand }
 
 University.blueprint do
-  name Sham.name
-  pensum Sham.boolean
+  name { Sham.name }
+  pensum { Sham.boolean }
+end
+
+Degree.blueprint do
+  name { Sham.name }
+  it { Sham.boolean }
+  university
 end
