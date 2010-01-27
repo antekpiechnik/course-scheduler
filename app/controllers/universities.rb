@@ -37,7 +37,6 @@ class Universities < Application
       ["pokaż studia", url(:controller => "universities")],
       ["dodaj studia", url(:controller => "universities", :action => "add")],
       ["typy zajęć", url(:controller => "lecture_types", :action => "index")],
-      ["dodaj nowy typ", url(:controller => "lecture_types", :action => "add")],
     ]
   end
 end

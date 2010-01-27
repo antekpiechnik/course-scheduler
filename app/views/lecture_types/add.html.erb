@@ -1,0 +1,5 @@
+<%= form_for @lecture_type, :action => url(:action => "add") do %>
+  <%= text_field :name, :label => "Nazwa" %>
+  <%= text_field :multiplier, :label => "Przelicznik" %>
+  <%= submit "Dodaj" %>
+<% end =%>
