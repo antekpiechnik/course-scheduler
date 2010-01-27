@@ -6,6 +6,10 @@ class Degrees < Application
     render
   end
 
+  def show
+    redirect(url(:controller => "lectures", :action => "index", :id => params[:id]))
+  end
+
   def add
     @university = University[params[:id]]
     @degree = Degree.new(params[:degree] || {})
