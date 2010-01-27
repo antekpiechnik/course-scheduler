@@ -5,6 +5,12 @@ class Universities < Application
     render
   end
 
+  def show
+    @university = University[params[:id]]
+    self.title = "Uczelnia: %s" % [@university.name]
+    render
+  end
+
   def add
     @university = University.new(params[:university] || {})
     self.title = "Dodaj nowe studia"

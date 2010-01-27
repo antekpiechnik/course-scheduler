@@ -11,7 +11,11 @@
     <% objects.each do |object| %>
       <tr>
         <% fields.each do |field| %>
-          <td><%= object.send(field) %></td>
+          <% if field == fields.first %>
+            <td><%= link_to(object.send(field), url(:controller => controller_name, :action => "show", :id => object.id)) %></td>
+          <% else %>
+            <td><%= object.send(field) %></td>
+        <% end %>
         <%  end %>
         <td>
           <%= link_to("Edytuj", url(:controller => controller_name, :action => "edit", :id => object.id)) %>
