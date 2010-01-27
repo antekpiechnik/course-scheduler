@@ -5,6 +5,8 @@ require 'faker'
 
 Sham.name { Faker::Name.name }
 Sham.boolean(:unique => false) { [true, false].rand }
+Sham.text { Faker::Lorem.sentence }
+Sham.year(:unique => false) { (1..5).to_a.rand }
 
 University.blueprint do
   name { Sham.name }
@@ -14,5 +16,12 @@ end
 Degree.blueprint do
   name { Sham.name }
   it { Sham.boolean }
-  university
+  university { University.make }
+end
+
+Lecture.blueprint do
+  name { Sham.name }
+  degree { Degree.make }
+  year { Sham.year }
+  note { Sham.text }
 end

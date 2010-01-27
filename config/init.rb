@@ -21,4 +21,7 @@ end
 
 Merb::BootLoader.after_app_loads do
   # This will get executed after your app's classes have been loaded.
+  Lecture.typecast_on_assignment = false
+  University.typecast_on_assignment = false
+  Degree.typecast_on_assignment = false
 end
