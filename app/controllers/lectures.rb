@@ -6,6 +6,19 @@ class Lectures < Application
     render
   end
 
+  def add
+    @degree = Degree[params[:id]]
+    @lecture = Lecture.new(params[:lecture] || {})
+    self.title = "Dodaj nowy wykład"
+    return render if request.get?
+    @lecture.save
+    redirect(url(:controller => "lectures", :action => "index", :id => @degree.id),
+             :message => {:notice => "Dodano wykład"})
+  rescue Sequel::ValidationFailed
+    self.message[:error] = error_messages(@lecture)
+    render
+  end
+
   def title
     "Wykłady"
   end

@@ -1,0 +1,7 @@
+<%= form_for @lecture, :action => url(:action => "add", :id => @degree.id) do %>
+  <%= hidden_field :degree_id, {:value => @degree.pk} %>
+  <%= text_field :name, :label => "Nazwa" %>
+  <%= select :year, :collection => (1..5).to_a, :text_method => :to_s, :value_method => :to_s %>
+  <%= text_area :note, :lavel => "Notatki" %>
+  <%= submit "Dodaj" %>
+<% end =%>

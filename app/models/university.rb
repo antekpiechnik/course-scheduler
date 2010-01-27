@@ -7,6 +7,6 @@ class University < BaseModel
   end
 
   def before_destroy
-    degrees_dataset.delete
+    degrees.each { |d| d.destroy }
   end
 end

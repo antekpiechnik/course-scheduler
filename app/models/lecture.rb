@@ -7,4 +7,8 @@ class Lecture < BaseModel
     validates_unique   [:name, :degree_id, :year], :message => "Nazwa jest już zajęta"
     validates_includes (1..5), :year, :message => "Rok musi być między 1 a 5"
   end
+
+  def year
+    super.to_i
+  end
 end

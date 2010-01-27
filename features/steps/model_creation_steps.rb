@@ -1,6 +1,8 @@
 Given /^(one )?model (.*) exists$/ do |count, model|
   klass = Object.full_const_get(model)
-  klass.destroy if count == "one "
+  if count == "one "
+    klass.all.each { |o| o.destroy }
+  end
   o = klass.make
   instance_variable_set(("@%s" % [model.downcase]).to_sym, o)
 end
