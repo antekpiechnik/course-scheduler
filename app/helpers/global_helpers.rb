@@ -12,7 +12,7 @@ module Merb
       items = [
         ["home", "/", li_class("dashboard")],
         ["konta", url(:controller => "accounts"), li_class("accounts")],
-        ["studia", url(:controller => "universities"), li_class("universities", "degrees")],
+        ["studia", url(:controller => "universities"), li_class("universities", "degrees", "lectures")],
         ["raporty", url(:controller => "reports"), li_class("reports")],
         ["wyloguj", url(:controller => "session", :action => "logout"), ""],
       ]
