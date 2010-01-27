@@ -1,8 +1,8 @@
 <table>
   <thead>
     <tr>
-      <% columns.each do |field, column_name| %>
-        <th><%= column_name %></th>
+      <% headers.each do |header| %>
+        <th><%= header %></th>
       <% end %>
       <th>Opcje</th>
     </tr>
@@ -10,7 +10,7 @@
   <tbody>
     <% objects.each do |object| %>
       <tr>
-        <% columns.each do |field, _| %>
+        <% fields.each do |field| %>
           <td><%= object.send(field) %></td>
         <%  end %>
         <td>

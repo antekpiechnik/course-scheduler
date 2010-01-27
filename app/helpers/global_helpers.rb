@@ -33,13 +33,34 @@ module Merb
     end
 
     def tabular(klass, controller, columns)
-      objects = klass.all
-      partial "shared/tabular", :objects => objects, :columns => columns, :controller_name => controller
+      order = params[:order]
+      fields = columns.map { |f, _| f }
+      objects = klass.tabular(params[:order], fields)
+      headers = header_links(params[:order], controller, columns)
+      partial "shared/tabular", :objects => objects, :fields => fields, :headers => headers, :controller_name => controller
     end
 
     protected
     def li_class(name)
       self.class.name.downcase == name ? "active" : ""
+    end
+
+    def header_links(order, controller, columns)
+      f, o = order.split(".") rescue nil
+      columns.map! do |field, name|
+        if field.to_s == f
+          if o == "asc"
+            order = "%s.desc" % field.to_s
+          else
+            order = "%s.asc" % field.to_s
+          end
+        else
+          order = "%s.asc" % field.to_s
+        end
+        [order, name]
+      end
+      columns.map! { |order, name| link_to(name, url(:controller => controller, :order => order)) }
+      columns
     end
   end
 end
