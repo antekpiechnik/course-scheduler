@@ -15,6 +15,16 @@ class LectureTest < Test::Unit::TestCase
     end
   end
 
+  def test_multiplier_must_be_numeric
+    lecture_type = LectureType.make
+    assert_invalid(lecture_type, :multiplier, "Przelicznik musi być liczbą większą od zera") do
+      lecture_type.multiplier = 0
+    end
+    assert_invalid(lecture_type, :multiplier, "Przelicznik musi być liczbą większą od zera") do
+      lecture_type.multiplier = "test"
+    end
+  end
+
   def test_name_must_be_unique
     name = "unique333"
     degree = Degree.make
