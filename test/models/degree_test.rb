@@ -17,10 +17,17 @@ class DegreeTest < Test::Unit::TestCase
 
   def test_name_must_be_unique
     name = "unique333"
-    Degree.make(:name => name)
-    degree = Degree.make
-    assert_invalid(degree, :name, "Nazwa jest już zajęta") do
+    university = University.make
+    Degree.make(:name => name, :university => university)
+    degree = Degree.make(:university => university)
+    assert_invalid(degree, [:name, :university_id], "Nazwa jest już zajęta") do
       degree.name = name
     end
+  end
+
+  def test_name_unique_across_one_university
+    name = "the same"
+    Degree.make(:name => name, :university => University.make)
+    Degree.make(:name => name, :university => University.make)
   end
 end
