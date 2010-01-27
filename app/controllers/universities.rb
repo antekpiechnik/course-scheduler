@@ -25,7 +25,6 @@ class Universities < Application
     self.title = "Czy na pewno usunąć?"
     return render if request.get?
     @university.destroy
-    self.message[:notice] = "Uczelnia usunięta"
     redirect(url(:controller => "universities"), :message => {:notice => "Uczelnia usunięta"})
   end
 

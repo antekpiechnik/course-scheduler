@@ -11,3 +11,8 @@ Given /^([0-9a-z_]+) ([0-9a-z_]+) is "([^\"]*)"$/ do |instance_name, field, valu
   o.send(("%s=" % [field]).to_sym, value)
   o.save
 end
+
+Given /^a degree exists$/ do
+  @university ||= University.make
+  @degree = Degree.make(:university => @university)
+end

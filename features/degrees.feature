@@ -15,3 +15,15 @@
     And I follow "Dodaj nowy"
     And I press "Dodaj"
     Then I should see "Wystąpiły błędy"
+
+  Scenario: Removing degree
+    Given a degree exists
+    And university name is "Toniemy Uni"
+    And degree name is "ToNieMy Deg"
+    When I go to "university" page
+    Then I should see "ToNieMy Deg"
+    When I follow "Usuń"
+    And I press "Tak"
+    Then I should be on "university" page
+    And I should see "Kierunek usunięty"
+    And I should not see "ToNieMy Deg"

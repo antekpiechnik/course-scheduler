@@ -19,6 +19,15 @@ class Degrees < Application
     render
   end
 
+  def delete
+    @degree = Degree[params[:id]]
+    @university = @degree.university
+    self.title = "Czy na pewno usunąć?"
+    return render if request.get?
+    @degree.destroy
+    redirect(url(:controller => "degrees", :action => "index", :id => @university.id), :message => {:notice => "Kierunek usunięty"})
+  end
+
   def title
     "Kierunki"
   end
