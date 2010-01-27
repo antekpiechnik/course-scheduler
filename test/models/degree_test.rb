@@ -14,4 +14,13 @@ class DegreeTest < Test::Unit::TestCase
       degree.name = ""
     end
   end
+
+  def test_name_must_be_unique
+    name = "unique333"
+    Degree.make(:name => name)
+    degree = Degree.make
+    assert_invalid(degree, :name, "Nazwa jest już zajęta") do
+      degree.name = name
+    end
+  end
 end
