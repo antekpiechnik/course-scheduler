@@ -36,12 +36,12 @@ p, ul, ol {
 }
 
 a:link {
-  color: #7BAA0F;
+  color: #444;
 }
 
 a:hover, a:active {
   text-decoration: none;
-  color: #003448;
+  color: #333333;
 }
 
 a:visited {
