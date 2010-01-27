@@ -3,7 +3,7 @@ class BaseModel < Sequel::Model
 
   def self.inherited(klass)
     super
-    klass.dataset = klass.name.downcase.plural.to_sym
+    klass.dataset = klass.name.pluralize.snake_case.to_sym
   end
 
   def self.tabular(dataset, order, page, fields)

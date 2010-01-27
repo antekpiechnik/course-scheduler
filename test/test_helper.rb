@@ -23,6 +23,7 @@ class Test::Unit::TestCase
   include CustomAssertions
 end
 
+LectureType.delete
 Lecture.delete
 Degree.delete
 University.delete
