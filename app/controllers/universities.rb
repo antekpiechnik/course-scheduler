@@ -6,9 +6,7 @@ class Universities < Application
   end
 
   def show
-    @university = University[params[:id]]
-    self.title = "Uczelnia: %s" % [@university.name]
-    render
+    redirect(url(:controller => "degrees", :action => "index", :id => params[:id]))
   end
 
   def add
@@ -38,6 +36,7 @@ class Universities < Application
 
   def submenu_items
     [
+      ["pokaż wszystkie", url(:controller => "universities")],
       ["dodaj nowe", url(:controller => "universities", :action => "add")],
     ]
   end

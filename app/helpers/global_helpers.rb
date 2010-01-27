@@ -12,7 +12,7 @@ module Merb
       items = [
         ["home", "/", li_class("dashboard")],
         ["konta", url(:controller => "accounts"), li_class("accounts")],
-        ["studia", url(:controller => "universities"), li_class("universities")],
+        ["studia", url(:controller => "universities"), li_class("universities", "degrees")],
         ["raporty", url(:controller => "reports"), li_class("reports")],
         ["wyloguj", url(:controller => "session", :action => "logout"), ""],
       ]
@@ -47,8 +47,8 @@ module Merb
     end
 
     protected
-    def li_class(name)
-      self.class.name.downcase == name ? "active" : ""
+    def li_class(*names)
+      names.include?(self.class.name.downcase) ? "active" : ""
     end
 
     def header_links(order, controller, columns)

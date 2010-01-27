@@ -25,10 +25,10 @@
     Then I should be on "universities" page
     And I should not see "Michal"
 
-  Scenario: Showing university
+  Scenario: Showing university goes to degrees
     Given model University exists
     And university name is "Testin"
     When I go to "universities" page
     And I follow "Testin"
     Then I should be on "university" page
-    And I should see "Uczelnia: Testin"
+    And I should see "Kierunki: Testin"

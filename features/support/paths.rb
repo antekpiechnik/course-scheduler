@@ -10,7 +10,7 @@ module NavigationHelpers
     when "new university"
       url(:controller => "universities", :action => "add")
     when "university"
-      url(:controller => "universities", :action => "show", :id => @university.id)
+      url(:controller => "degrees", :action => "index", :id => @university.id)
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"
