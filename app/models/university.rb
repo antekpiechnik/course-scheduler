@@ -1,7 +1,7 @@
 class University < Sequel::Model
   plugin :validation_helpers
 
-  def self.tabular(order, fields)
+  def self.tabular(order, page, fields)
     if order.nil?
       order = fields.first.asc
     else
@@ -13,7 +13,14 @@ class University < Sequel::Model
         order = fields.first.asc
       end
     end
-    limit(10).order(order).all
+    page = page.to_i
+    page = 0 if page <= 0
+    offset = page * self.per_page
+    limit(self.per_page, offset).order(order).all
+  end
+
+  def self.per_page
+    10
   end
 
   def validate
