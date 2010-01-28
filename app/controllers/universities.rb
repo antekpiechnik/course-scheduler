@@ -10,15 +10,13 @@ class Universities < Application
 
   def edit
     @university = University[params[:id]]
-    render
-  end
-
-  def update
-    #puts params.inspect
-    @university = University[params[:id]]
-    @university.update_attributes(params[:university])
+    return render if request.get?
+    @university.update(params[:university])
     redirect(url(:controller => "universities"),
              :message => {:notice => "Zaktualizowano!"})
+  rescue Sequel::ValidationFailed
+    self.message[:notice] = error_messages(@university)
+    render
   end
 
   def add

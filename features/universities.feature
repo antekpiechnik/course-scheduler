@@ -33,7 +33,6 @@
     Then I should be on "university" page
     And I should see "Kierunki: Testin"
 
-  @wip
   Scenario: Editing university
     Given one model University exists
     And university name is "Michal"
