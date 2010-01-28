@@ -1,6 +1,4 @@
 <%= form_for @degree, :action => url(:action => "add", :id => @university.id) do %>
-  <%= hidden_field :university_id, {:value => @university.pk} %>
-  <%= text_field :name, :label => "Nazwa" %>
-  <%= check_box :it, :label => "Informatyka?" %>
+  <%= partial :form %>
   <%= submit "Dodaj" %>
 <% end =%>

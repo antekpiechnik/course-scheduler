@@ -27,3 +27,14 @@
     Then I should be on "university" page
     And I should see "Kierunek usunięty"
     And I should not see "ToNieMy Deg"
+
+  Scenario: Editing degree
+    Given a degree exists
+    And degree name is "Lol"
+    When I go to "university" page
+    When I follow "Edytuj"
+    And I fill in "Nazwa" with "Olo"
+    And I press "Edytuj"
+    Then I should be on "university" page
+    And I should see "Zaktualizowano!"
+    And I should see "Olo"
