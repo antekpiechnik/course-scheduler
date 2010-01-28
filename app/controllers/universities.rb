@@ -8,6 +8,19 @@ class Universities < Application
     redirect(url(:controller => "degrees", :action => "index", :id => params[:id]))
   end
 
+  def edit
+    @university = University[params[:id]]
+    render
+  end
+
+  def update
+    #puts params.inspect
+    @university = University[params[:id]]
+    @university.update_attributes(params[:university])
+    redirect(url(:controller => "universities"),
+             :message => {:notice => "Zaktualizowano!"})
+  end
+
   def add
     @university = University.new(params[:university] || {})
     self.title = "Dodaj nowe studia"

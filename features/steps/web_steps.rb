@@ -21,7 +21,7 @@ When /^(?:|I )select "([^\"]*)" from "([^\"]*)"$/ do |value, field|
 end
 
 When /^(?:|I )check "([^\"]*)"$/ do |field|
-  pending
+  check(field)
 end
 
 Then /^I should be on "([^\"]*)" page$/ do |page_name|
