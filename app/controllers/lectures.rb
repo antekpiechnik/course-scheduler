@@ -1,9 +1,13 @@
 class Lectures < Application
   def index
     @degree = Degree[params[:id]]
-    self.title = "Zajęcia: %s" % [@degree.name]
+    @university = @degree.university
     @lectures = [Lecture, Lecture.filter(:degree_id => @degree.id), "lectures", [[:name, "Nazwa"], [:year, "Rok"], [:note, "Notatki"]]]
     render
+  end
+
+  def show
+    redirect(url(:controller => "lecture_classes", :action => "index", :id => params[:id]))
   end
 
   def add
@@ -29,7 +33,8 @@ class Lectures < Application
   end
 
   def title
-    "Zajęcia"
+    university_link = link_to(@university.name, url(:controller => "degrees", :action => "index", :id => @university.id))
+    "Zajęcia: kierunek %s na %s" % [@degree.name, university_link]
   end
 
   def submenu_items
