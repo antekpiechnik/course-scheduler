@@ -19,6 +19,15 @@ class Lectures < Application
     render
   end
 
+  def delete
+    @lecture = Lecture[params[:id]]
+    @degree = @lecture.degree
+    self.title = "Czy na pewno usunąć?"
+    return render if request.get?
+    @lecture.destroy
+    redirect(url(:controller => "lectures", :action => "index", :id => @degree.id), :message => {:notice => "Zajęcia usunięte"})
+  end
+
   def title
     "Zajęcia"
   end

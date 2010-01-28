@@ -18,3 +18,8 @@ Given /^a degree exists$/ do
   @university ||= University.make
   @degree = Degree.make(:university => @university)
 end
+
+Given /^a lecture exists$/ do
+  Given "a degree exists"
+  @lecture = Lecture.make(:degree => @degree)
+end

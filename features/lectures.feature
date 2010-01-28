@@ -6,3 +6,13 @@
     And I press "Dodaj"
     Then I should see "Dodano zajęcia"
     And I should be on "degree" page
+
+  Scenario: Removing lecture
+    Given a lecture exists
+    And lecture name is "wyklad333"
+    When I go to "degree" page
+    And I follow "Usuń"
+    And I press "Tak"
+    And I should be on "degree" page
+    And I should see "Zajęcia usunięte"
+    And I should not see "wyklad333"
