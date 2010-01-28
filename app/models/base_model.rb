@@ -27,4 +27,11 @@ class BaseModel < Sequel::Model
   def self.per_page
     10
   end
+
+  protected
+  def validates_positive_integer(atts, opts = {})
+    if self.send(atts) <= 0
+      errors.add(atts, opts[:message] || "Attribute must be positive integer")
+    end
+  end
 end

@@ -1,4 +1,4 @@
-  Scenario: Adding feature to degree
+  Scenario: Adding lectures to degree
     Given a degree exists
     When I go to "degree" page
     And I follow "Dodaj zajęcia"
