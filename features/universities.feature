@@ -32,3 +32,16 @@
     And I follow "Testin"
     Then I should be on "university" page
     And I should see "Kierunki: Testin"
+
+  @wip
+  Scenario: Editing university
+    Given one model University exists
+    And university name is "Michal"
+    When I go to "universities" page
+    Then I should see "Michal"
+    When I follow "Edytuj"
+    And I check "Pensum?"
+    And I fill in "Nazwa" with "Jacek"
+    And I press "Aktualizuj"
+    Then I should see "Zaktualizowano!"
+    And I should see "Jacek"

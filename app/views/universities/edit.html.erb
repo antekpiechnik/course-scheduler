@@ -1,0 +1,5 @@
+<%= form_for @university, :action => url(:action => "update") do %>
+  <%= partial :form, :with => @university %>
+
+  <%= submit "Aktualizuj" %>
+<% end =%>

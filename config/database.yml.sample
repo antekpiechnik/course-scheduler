@@ -4,6 +4,8 @@ development: &defaults
   # These are the settings for repository :default
   adapter:  postgres
   database: scheduler_development
+  username: postgres
+  password: postgres
 
 test:
   <<:       *defaults
