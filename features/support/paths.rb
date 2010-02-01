@@ -13,6 +13,8 @@ module NavigationHelpers
       url(:controller => "degrees", :action => "index", :id => @university.id)
     when "degree"
       url(:controller => "lectures", :action => "index", :id => @degree.id)
+    when "lecture"
+      url(:controller => "lecture_classes", :action => "index", :id => @lecture.id)
     when "lecture types"
       url(:controller => "lecture_types")
     when "new lecture type"

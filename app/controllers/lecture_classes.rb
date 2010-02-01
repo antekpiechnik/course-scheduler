@@ -6,6 +6,28 @@ class LectureClasses < Application
     render
   end
 
+  def add
+    @lecture = Lecture[params[:id]]
+    @lecture_class = LectureClass.new(params[:lecture_class] || {})
+    self.title = "Dodaj nowa klase"
+    return render if request.get?
+    @lecture_class.save
+    redirect(url(:controller => "lecture_classes", :action => "index", :id => @lecture.id),
+             :message => {:notice => "Dodano klasy"})
+  rescue Sequel::ValidationFailed
+    self.message[:error] = error_messages(@lecture_class)
+    render
+  end
+
+  def delete
+    @lecture_class = LectureClass[params[:id]]
+    @lecture = Lecture[@lecture_class.lecture_id]
+    self.title = "Czy na pewno usunąć?"
+    return render if request.get?
+    @lecture_class.destroy
+    redirect(url(:controller => "lecture_classes", :action => "index", :id => @lecture.id), :message => {:notice => "Klasa usunięta"})
+  end
+
   def title
     "Klasy: zajęcia %s" % [@lecture.name]
   end
