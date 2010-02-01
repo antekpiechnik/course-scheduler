@@ -21,3 +21,18 @@
     And I press "Tak"
     And I should be on "lecture" page
     And I should see "Klasa usunięta"
+
+  Scenario: Editing lecture_class
+    Given a lecture_class exists
+    And lecture_type name is "jaceklol"
+    And lecture_class semester is "zimowy"
+    When I go to "lecture" page
+    When I follow "Edytuj"
+    And I select "jaceklol" from "Typ"
+    And I select "letni" from "Semestr"
+    And I fill in "TH" with "666"
+    And I press "Edytuj"
+    Then I should be on "lecture" page
+    And I should see "Zaktualizowano!"
+    And I should see "666"
+    And I should see "letni"

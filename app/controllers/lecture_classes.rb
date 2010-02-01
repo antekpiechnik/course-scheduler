@@ -19,6 +19,19 @@ class LectureClasses < Application
     render
   end
 
+  def edit
+    @lecture_class = LectureClass[params[:id]]
+    @lecture = Lecture[@lecture_class.lecture_id]
+
+    return render if request.get?
+    @lecture_class.update(params[:lecture_class])
+    redirect(url(:controller => "lecture_classes", :action => "index", :id => @lecture.id),
+             :message => {:notice => "Zaktualizowano!"})
+  rescue Sequel::ValidationFailed
+    self.message[:notice] = error_messages(@lecture)
+    render
+  end
+
   def delete
     @lecture_class = LectureClass[params[:id]]
     @lecture = Lecture[@lecture_class.lecture_id]

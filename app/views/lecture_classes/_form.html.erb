@@ -1,0 +1,6 @@
+<%= hidden_field :lecture_id, {:value => @lecture.pk} %>
+<%= select :lecture_type_id, :collection => LectureType.all.to_a, :text_method => :name, :value_method => :id, :label => "Typ" %>
+<%= select :semester, :collection => [LectureClass::SUMMER, LectureClass::WINTER], :text_method => :to_s, :value_method => :to_s, :label => "Semestr" %>
+<%= text_field :billing_hours, :label => "BH" %>
+<%= text_field :class_hours, :label => "CH" %>
+<%= text_field :total_hours, :label => "TH" %>
