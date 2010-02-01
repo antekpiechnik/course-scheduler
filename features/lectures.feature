@@ -16,3 +16,14 @@
     And I should be on "degree" page
     And I should see "Zajęcia usunięte"
     And I should not see "wyklad333"
+
+  Scenario: Editing lecture
+    Given a lecture exists
+    And lecture name is "loal"
+    When I go to "degree" page
+    When I follow "Edytuj"
+    And I fill in "Nazwa" with "loal2"
+    And I press "Edytuj"
+    Then I should be on "degree" page
+    And I should see "Zaktualizowano!"
+    And I should see "loal2"

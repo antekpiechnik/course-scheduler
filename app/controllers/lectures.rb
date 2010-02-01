@@ -23,6 +23,20 @@ class Lectures < Application
     render
   end
 
+  def edit
+    @lecture = Lecture[params[:id]]
+    @degree = @lecture.degree
+    @university = @degree.university
+
+    return render if request.get?
+    @lecture.update(params[:lecture])
+    redirect(url(:controller => "lectures", :action => "index", :id => @degree.id),
+             :message => {:notice => "Zaktualizowano!"})
+  rescue Sequel::ValidationFailed
+    self.message[:notice] = error_messages(@lecture)
+    render
+  end
+
   def delete
     @lecture = Lecture[params[:id]]
     @degree = @lecture.degree
