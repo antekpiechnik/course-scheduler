@@ -20,3 +20,15 @@
     And I press "Dodaj"
     Then I should see "Wystąpiły błędy"
     And I should be on "new lecture type" page
+
+  Scenario: Editing lecture
+    Given a lecture_type exists
+    And lecture_type name is "loal"
+    When I go to "lecture types" page
+    When I follow "Edytuj"
+    And I fill in "Nazwa" with "loal2"
+    And I fill in "Przelicznik" with "13"
+    And I press "Edytuj"
+    Then I should be on "lecture types" page
+    And I should see "Zaktualizowano!"
+    And I should see "loal2"

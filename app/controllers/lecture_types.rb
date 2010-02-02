@@ -16,6 +16,19 @@ class LectureTypes < Application
     render
   end
 
+  def edit
+    @lecture_type = LectureType[params[:id]]
+    self.title = "Edycja typów zajęć"
+    return render if request.get?
+    @lecture_type.update(params[:lecture_type])
+    redirect(url(:controller => "lecture_types"),
+             :message => {:notice => "Zaktualizowano!"})
+  rescue Sequel::ValidationFailed
+    self.message[:notice] = error_messages(@lecture_type)
+    render
+  end
+
+
   def submenu_items
     [
       ["pokaż typy", url(:controller => "lecture_types", :action => "index")],

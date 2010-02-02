@@ -28,7 +28,7 @@ class LectureClasses < Application
     redirect(url(:controller => "lecture_classes", :action => "index", :id => @lecture.id),
              :message => {:notice => "Zaktualizowano!"})
   rescue Sequel::ValidationFailed
-    self.message[:notice] = error_messages(@lecture)
+    self.message[:notice] = error_messages(@lecture_class)
     render
   end
 
