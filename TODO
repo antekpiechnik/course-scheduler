@@ -1,0 +1,87 @@
+1. Wygodniejszy interfejs przypisywania prowadzących do zajęć, zmieniania liczby
+grup przypisanych do prowadzących dane zajęcia itd. Np. przy zmienianiu liczby
+grup dla danego prowadzącego powinni być widoczni wszyscy prowadzący dane
+zajęcia, wszędzie powinny być informacje o liczbie jeszcze nie przypisanych grup
+z danych zajęć lub o tym ile grup zostało przypisanych ponad stan faktyczny -
+nie należy jednak blokować możliwości przekraczania faktycznej liczby grup przy
+przypisywaniu.
+
+
+2. Wprowadzenie możliwości rozliczania godzinowego, oprócz opartego na grupach.
+Czyli np. możliwość przypisywania w rozliczeniu pewnym prowadzącym godzin (np.
+    10) za dany przedmiot. Ilości grup wyliczałyby się wtedy automatycznie.
+
+
+3. Wydzielić kategorię "Inne" oprócz "semestru zimowego" i "semestru letniego".
+Znajdowały by się tam wszelkie dodatkowe godziny za opiekę nad doktorantami,
+  koła naukowe itp., do których nie można przypisać roku, ani semestru.
+
+
+4. Możliwość wybrania, w trakcie generowania raportu, na podstawie czego
+obliczane są godziny: „Grup zajęciowych” lub „Grup rozliczeniowych”.
+
+
+5. Sortowanie terminarza grup u admina po przedmiotach lub po prowadzących.
+
+
+6. Sortowanie po każdej kolumnie w tabelkach ze spisami zajęć, przedmiotów, itd.
+
+
+7. Dodanie linku edycji wszędzie, gdzie pojawiają się tabelki, czyli: "rodzaj
+studiów – pokaż wszystkie", "typ zajęć – pokaż wszystkie”, "kierunki – pokaż
+wszystkie", "przedmioty - pokaż wszystkie".
+
+
+8. W raportach podsumowania (liczby godzin) powinny pojawiać się po każdym
+semestrze oddzielnie, a na końcu jeszcze podsumowanie wszystkich godzin.
+
+
+9. Oprócz powyższych informacji powinna się znaleźć tabelka (patrz Załącznik 1)
+  zawierająca godziny oddzielnie dla przedmiotów z EAIiE i oddzielnie spoza
+  EAIiE. W ramach tego podziału powinien być podział na studia stacjonarne i
+  niestacjonarne, a następnie podział na wykłady i ćw+lab.+proj. Dla każdego
+  podziału powinny być wyliczone sumy: czyli suma dla stacjonarnych na EAIiE,
+  dla niestacjonarnych na EAIiE itd. Natomiast godziny za egzamin powinny być w
+  ogóle wydzielone osobno. Odzielnie powinno się znaleźć również podsumowanie
+  dla godzin spoza „zajęć”, czyli opieki nad kołem naukowym itd. Dobrze by było
+  gdyby w ogóle tego rodzaju zestawienia można było sobie konfigurować
+  samodzielnie, czyli np. admin mógłby pogrupować co ma być zsumowane ponieważ
+  wzór tabelki może się zmienić.
+
+
+10. Możliwość wygenerowania powyższej tabelki niezależnie od raportu
+godzinowego.
+
+
+11. Każdy element raportu można "włączyć" lub "wyłączyć" (przed wygenerowaniem
+    raportu).
+
+
+12. W raportach "po prowadzących" w tabelce z podsumowaniem godzinowym całego
+roku pozycja "Pensum" powinna się nazywać np. "Możliwe do rozliczenia w ramach
+pensum" albo coś podobnego (najlepiej krótszego). W tej chwili jest to trochę
+mylące bo każdy myśli, że to jest jego pensum, a nie godziny które mogą służyć
+do rozliczenia pensum.
+
+
+13. Powinna być możliwość zmiany semestru przy zmianie ustawień dla danych
+zajęć. Ogólnie wszystko powinno dać się zmienić bez konieczności uprzedniego
+usuwania danego elementu.
+
+
+14. Dla wykładowcy danego przedmiotu raport o całym "jego" przedmiocie
+(tzn. kto prowadzi lab., ćw. itd.).
+
+
+15. Raporty powinny być eksportowane do LaTeXa (tak jak jest w tej chwili)
+oraz PDFa.
+
+
+16. Błąd w wersji 1.0 systemu: w grupach u prowadzącego pojawiają się już
+usunięte grupy jako "do uzupełnienia".
+
+
+17. Przypominanie hasła na maila.
+
+
+18. Dostęp do systemu przez https.

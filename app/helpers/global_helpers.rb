@@ -11,10 +11,10 @@ module Merb
     def menu
       items = [
         ["home", "/", li_class("dashboard")],
-        ["konta", url(:controller => "accounts"), li_class("accounts")],
+        ["konta", url(:controller => "users"), li_class("users")],
         ["studia", url(:controller => "universities"), li_class("universities", "degrees", "lectures", "lecture_types")],
         ["raporty", url(:controller => "reports"), li_class("reports")],
-        ["wyloguj", url(:controller => "session", :action => "logout"), ""],
+        ["wyloguj", "/logout"],
       ]
       partial "shared/menu", :menu_items => items
     end

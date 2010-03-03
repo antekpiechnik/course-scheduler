@@ -1,4 +1,6 @@
 class Application < Merb::Controller
+  before :ensure_authenticated
+
   def display_title
     @_title || self.title
   end

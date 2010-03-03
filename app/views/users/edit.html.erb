@@ -1,0 +1,5 @@
+<%= form_for @user, :action => url(:action => "edit", :id => @user.id) do %>
+  <%= partial :form, :with => @user %>
+
+  <%= submit "Aktualizuj" %>
+<% end =%>

@@ -1,6 +1,8 @@
 class Exceptions < Application
+  skip_before :ensure_authenticated
+
   def exception
-    render request.exceptions.first.message
+    request.exceptions.first.message
   end
 
   def title
