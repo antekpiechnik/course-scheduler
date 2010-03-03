@@ -1,6 +1,7 @@
   Scenario: Adding lecture_class to a lecture
-    Given a lecture exists
-    Given a lecture_type exists
+    Given I am logged in
+    And a lecture exists
+    And a lecture_type exists
     And lecture_type name is "jacek"
     When I go to "lecture" page
     And I follow "dodaj klasy"
@@ -14,7 +15,8 @@
     And I should be on "lecture" page
 
   Scenario: Removing lecture_class
-    Given a lecture_class exists
+    Given I am logged in
+    And a lecture_class exists
     And lecture_class semester is "zimowy"
     When I go to "lecture" page
     And I follow "Usuń"
@@ -23,7 +25,8 @@
     And I should see "Klasa usunięta"
 
   Scenario: Editing lecture_class
-    Given a lecture_class exists
+    Given I am logged in
+    And a lecture_class exists
     And lecture_type name is "jaceklol"
     And lecture_class semester is "zimowy"
     When I go to "lecture" page

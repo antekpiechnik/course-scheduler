@@ -1,4 +1,5 @@
   Scenario: Adding new university
+    Given I am logged in
     When I go to "dashboard" page
     And I follow "studia"
     And I follow "dodaj studia"
@@ -8,6 +9,7 @@
     And I should be on "universities" page
 
   Scenario: Adding university fails
+    Given I am logged in
     When I go to "dashboard" page
     And I follow "studia"
     And I follow "dodaj studia"
@@ -16,7 +18,8 @@
     And I should be on "new university" page
 
   Scenario: Removing university
-    Given one model University exists
+    Given I am logged in
+    And one model University exists
     And university name is "Michal"
     When I go to "universities" page
     Then I should see "Michal"
@@ -26,7 +29,8 @@
     And I should not see "Michal"
 
   Scenario: Showing university goes to degrees
-    Given model University exists
+    Given I am logged in
+    And model University exists
     And university name is "Testin"
     When I go to "universities" page
     And I follow "Testin"
@@ -34,7 +38,8 @@
     And I should see "Kierunki: Testin"
 
   Scenario: Editing university
-    Given one model University exists
+    Given I am logged in
+    And one model University exists
     And university name is "Michal"
     When I go to "universities" page
     Then I should see "Michal"

@@ -41,3 +41,7 @@ LectureClass.blueprint do
   lecture { Lecture.make }
   lecture_type { LectureType.make }
 end
+
+User.blueprint do
+  password_confirmation { password }
+end

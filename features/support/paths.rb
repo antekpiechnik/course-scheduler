@@ -3,6 +3,8 @@ module NavigationHelpers
     case page_name
     when "home"
       "/"
+    when "login"
+      "/login"
     when "dashboard"
       url(:controller => "dashboard")
     when "universities"

@@ -1,5 +1,6 @@
   Scenario: Adding degree to university
-    Given model University exists
+    Given I am logged in
+    And model University exists
     And university name is "South Karolina"
     When I go to "university" page
     And I follow "Dodaj nowy"
@@ -9,7 +10,8 @@
     And I should be on "university" page
 
   Scenario: Adding degree to university fails
-    Given model University exists
+    Given I am logged in
+    And model University exists
     And university name is "South Karolina 2"
     When I go to "university" page
     And I follow "Dodaj nowy"
@@ -17,7 +19,8 @@
     Then I should see "Wystąpiły błędy"
 
   Scenario: Removing degree
-    Given a degree exists
+    Given I am logged in
+    And a degree exists
     And university name is "Toniemy Uni"
     And degree name is "ToNieMy Deg"
     When I go to "university" page
@@ -29,7 +32,8 @@
     And I should not see "ToNieMy Deg"
 
   Scenario: Editing degree
-    Given a degree exists
+    Given I am logged in
+    And a degree exists
     And degree name is "Lol"
     When I go to "university" page
     When I follow "Edytuj"

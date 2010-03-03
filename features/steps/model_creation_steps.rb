@@ -15,6 +15,10 @@ Given /^([0-9a-z_]+) ([0-9a-z_]+) is "([^\"]*)"$/ do |instance_name, field, valu
   o.save
 end
 
+Given /^a user exists$/ do
+  @user = User.make(:login => "root", :password => "root")
+end
+
 Given /^a degree exists$/ do
   @university ||= University.make
   @degree = Degree.make(:university => @university)

@@ -1,5 +1,6 @@
   Scenario: Adding lectures to degree
-    Given a degree exists
+    Given I am logged in
+    And a degree exists
     When I go to "degree" page
     And I follow "Dodaj zajęcia"
     And I fill in "Nazwa" with "Wyklad1"
@@ -8,7 +9,8 @@
     And I should be on "degree" page
 
   Scenario: Removing lecture
-    Given a lecture exists
+    Given I am logged in
+    And a lecture exists
     And lecture name is "wyklad333"
     When I go to "degree" page
     And I follow "Usuń"
@@ -18,7 +20,8 @@
     And I should not see "wyklad333"
 
   Scenario: Editing lecture
-    Given a lecture exists
+    Given I am logged in
+    And a lecture exists
     And lecture name is "loal"
     When I go to "degree" page
     When I follow "Edytuj"
