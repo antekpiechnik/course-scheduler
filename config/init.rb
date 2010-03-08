@@ -24,4 +24,6 @@ Merb::BootLoader.after_app_loads do
   Lecture.typecast_on_assignment = false
   University.typecast_on_assignment = false
   Degree.typecast_on_assignment = false
+  Merb.add_mime_type(:pdf, :to_pdf, %w[application/pdf])#, "Content-Encoding" => "gzip") # doesn't work with Safari
 end
+

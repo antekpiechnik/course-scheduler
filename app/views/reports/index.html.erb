@@ -1,0 +1,4 @@
+<%= form :action => url(:action => "generate") do %>
+  <%= select :report_id, :collection => Reports::TYPES %>
+  <%= submit "Generuj" %>
+<% end =%>

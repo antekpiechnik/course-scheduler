@@ -1,0 +1,28 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[MeX]{polski}
+\usepackage[utf8x]{inputenc}
+\usepackage{url}
+\usepackage{graphicx}
+\addtolength{\hoffset}{0cm}
+\addtolength{\textwidth}{4cm}
+\usepackage[top=0in, bottom=0in]{geometry}
+\usepackage{tabularx}
+
+\setlength\topmargin{0cm}
+\setlength\textwidth{17cm}
+\setlength\textheight{29.7cm}
+
+\title{<%= @title %>}
+\frenchspacing
+\begin{document}
+\begin{center}
+  {\bf <%= @title %>}
+  \newline
+  \newline
+\end{center}
+
+Data: <%= Date.today.strftime("%d-%m-%Y")%>
+
+<%= catch_content :for_layout %>
+\end{document}
